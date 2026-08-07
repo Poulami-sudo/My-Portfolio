@@ -3,7 +3,7 @@
 Welcome to my personal portfolio repository! This website showcases my journey as a web developer, my technical skills, and the projects I have built. 
 
  🚀 Live Demo
-[Click here to view my live portfolio!]( https://poulami-sudo.github.io/My-Cov/)
+[Click here to view my live portfolio!](  https://poulami-sudo.github.io/My-Portfolio/)
 
  🛠️ Technologies Used
 * **HTML5:** For the structure and content of the web pages.
