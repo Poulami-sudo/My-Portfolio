@@ -1,0 +1,558 @@
+/* =====================================
+   Universal Selector
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   Main Container
+===================================== */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: #0F4C81;
+}
+
+
+/* =====================================
+   Navigation Bar
+===================================== */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+
+/* =====================================
+   Logo
+===================================== */
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   Navigation Menu
+===================================== */
+
+nav {
+    background: #B3E5FC;
+    color: #222;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+    font-weight: 500;
+}
+
+nav ul li a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #0288D1;
+}
+
+.logo {
+    color: #01579B;
+}
+
+.hero-left h2 {
+    color: #0288D1;
+}
+
+.hero-left p {
+    color: #555;
+}
+
+.buttons a:first-child {
+    background: #0288D1;
+    color: white;
+}
+
+.buttons a:last-child {
+    border: 2px solid #0288D1;
+    color: #0288D1;
+}
+
+.buttons a:last-child:hover {
+    background: #0288D1;
+    color: white;
+}
+
+.project-card,
+.skill-box,
+.contact-box,
+.education-box {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =====================================
+   Hero Section
+===================================== */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+
+
+/* =====================================
+   Hero Left
+===================================== */
+
+.hero-left {
+    width: 50%;
+    color: white;
+}
+
+.hero-left h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero-left h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.hero-left h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero-left p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #E3F2FD;
+    margin-bottom: 35px;
+}
+
+
+/* =====================================
+   Buttons
+===================================== */
+
+.buttons a {
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.buttons a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================
+   Hero Right
+===================================== */
+
+.hero-right {
+    width: 50%;
+    text-align: center;
+}
+
+.hero-right img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    transition: 0.4s;
+}
+
+.hero-right img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.about {
+    padding: 80px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+.about-card {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    transition: .3s;
+    margin-top: 20px;
+}
+
+.about-card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.about-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+}
+
+
+/* =====================================
+   Education Section
+===================================== */
+
+.education {
+    padding: 80px;
+}
+
+.education h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.education-box {
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    background: white;
+    color: black;
+}
+
+.education-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.education-box p {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.education-box span {
+    color: lightgray;
+}
+
+.education-box:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: all 0.4s ease;
+}
+
+
+/* =====================================
+   Skills Section
+===================================== */
+
+.skills {
+    padding: 80px;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-box {
+    width: 180px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background: white;
+    color: #222;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: all 0.4s ease;
+}
+
+
+/* =====================================
+   Projects Section
+===================================== */
+
+.projects {
+    padding: 80px;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.project-card {
+    width: 300px;
+    background: white;
+    color: #222;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    text-decoration: none;
+    background: #0288D1;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.project-card a:hover {
+    background: #01579B;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: all 0.4s ease;
+}
+
+
+/* =====================================
+   Professional Experience
+===================================== */
+
+.experience {
+    padding: 80px;
+    background: #0F4C81;
+}
+
+.experience h2 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.experience-card {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    color: #222;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+}
+
+.experience-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: all 0.4s ease;
+}
+
+.experience-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.experience-card h4 {
+    color: #0288D1;
+    margin-bottom: 15px;
+}
+
+.experience-card p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.experience-card ul {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+.experience-card li {
+    margin-bottom: 8px;
+}
+
+
+/* =====================================
+   Contact Section
+===================================== */
+
+.contact {
+    padding: 80px;
+    background: #0F4C81;
+    margin-bottom: 0;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-box {
+    background: white;
+    color: #222;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.contact-box a {
+    text-decoration: none;
+    color: #0288D1;
+    font-weight: 600;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+.contact-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.contact-box:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: all 0.4s ease;
+}
+
+
+/* =====================================
+   Footer
+===================================== */
+
+footer {
+    background: #0F4C81;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid lightgray;
+    margin-top: 0;
+    color: white;
+}
+
+
+/* Responsive Design */
+
+@media(max-width:768px) {
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+    .hero-left {
+        width: 100%;
+    }
+    .hero-right {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .hero-right img {
+        width: 250px;
+        height: 250px;
+    }
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
