@@ -1,6 +1,12 @@
-/* =====================================
+/* =========================================================
+   POULAMI NANDI — PORTFOLIO
+   COMPLETE STYLE SHEET
+========================================================= */
+
+
+/* =========================================================
    UNIVERSAL
-===================================== */
+========================================================= */
 
 * {
     margin: 0;
@@ -16,12 +22,28 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #050816;
     color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
 }
 
 
-/* =====================================
+/* =========================================================
    MAIN CONTAINER
-===================================== */
+========================================================= */
 
 .container {
     width: 100%;
@@ -44,28 +66,28 @@ body {
 }
 
 
-/* =====================================
+/* =========================================================
    NAVIGATION
-===================================== */
+========================================================= */
 
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 80px;
     background: rgba(5, 8, 22, 0.75);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 
-/* =====================================
+/* =========================================================
    LOGO
-===================================== */
+========================================================= */
 
 .logo {
     font-size: 30px;
@@ -82,9 +104,9 @@ nav {
 }
 
 
-/* =====================================
+/* =========================================================
    NAVIGATION MENU
-===================================== */
+========================================================= */
 
 nav ul {
     display: flex;
@@ -97,10 +119,9 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #e5e7eb;
-    text-decoration: none;
-    font-weight: 500;
     position: relative;
+    color: #e5e7eb;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -129,37 +150,62 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-btn {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(103, 232, 249, 0.25);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #67e8f9;
+    cursor: pointer;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(103, 232, 249, 0.12);
+}
+
+
+/* =========================================================
    HERO SECTION
-===================================== */
+========================================================= */
 
 .hero {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 100px 80px;
     min-height: 90vh;
 }
 
 
-/* =====================================
+/* =========================================================
    HERO LEFT
-===================================== */
+========================================================= */
 
 .hero-left {
     width: 52%;
-    color: white;
+    color: #ffffff;
 }
 
 .hero-left h3 {
-    font-size: 28px;
     margin-bottom: 10px;
     color: #e5e7eb;
+    font-size: 28px;
 }
 
 .hero-left h1 {
-    font-size: 60px;
     margin-bottom: 15px;
+    font-size: 60px;
     line-height: 1.1;
     background: linear-gradient( 90deg, #67e8f9, #a78bfa, #f0abfc);
     -webkit-background-clip: text;
@@ -168,27 +214,38 @@ nav ul li a.active::after {
 }
 
 
-/* Typing Text */
+/* =========================================================
+   TYPING TEXT
+========================================================= */
 
 .hero-left h2 {
-    font-size: 35px;
+    min-height: 52px;
     margin-bottom: 20px;
     color: #67e8f9;
+    font-size: 35px;
+}
+
+#typing-text {
     min-height: 52px;
 }
 
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
 .hero-left p {
+    max-width: 700px;
+    margin-bottom: 35px;
+    color: #cbd5e1;
     font-size: 18px;
     line-height: 1.8;
-    color: #cbd5e1;
-    margin-bottom: 35px;
-    max-width: 700px;
 }
 
 
-/* =====================================
-   BUTTONS
-===================================== */
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
 .buttons {
     display: flex;
@@ -197,7 +254,6 @@ nav ul li a.active::after {
 }
 
 .buttons a {
-    text-decoration: none;
     padding: 14px 28px;
     border-radius: 30px;
     font-weight: 600;
@@ -205,17 +261,16 @@ nav ul li a.active::after {
 }
 
 
-/* Primary Button */
+/* Primary */
 
 .buttons a:first-child {
     background: linear-gradient( 135deg, #67e8f9, #a78bfa);
     color: #050816;
-    border: none;
     box-shadow: 0 8px 25px rgba(103, 232, 249, 0.18);
 }
 
 
-/* Secondary Button */
+/* Secondary */
 
 .buttons a:last-child {
     border: 2px solid #67e8f9;
@@ -234,9 +289,9 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
+/* =========================================================
    HERO IMAGE
-===================================== */
+========================================================= */
 
 .hero-right {
     width: 48%;
@@ -246,9 +301,10 @@ nav ul li a.active::after {
 .hero-right img {
     width: 350px;
     height: 350px;
+    margin: auto;
     object-fit: cover;
-    border-radius: 50%;
     border: 4px solid #67e8f9;
+    border-radius: 50%;
     box-shadow: 0 0 25px rgba(103, 232, 249, 0.30), 0 0 70px rgba(167, 139, 250, 0.20);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
@@ -259,40 +315,83 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
+/* =========================================================
    COMMON SECTIONS
-===================================== */
+========================================================= */
 
 .about,
 .education,
 .skills,
-.projects,
 .experience,
 .contact {
     padding: 90px 80px;
 }
 
 
-/* =====================================
+/* =========================================================
    SECTION HEADINGS
-===================================== */
+========================================================= */
 
 .about h1,
 .education h2,
 .skills h2,
-.projects h2,
 .experience h2,
 .contact h2 {
+    margin-bottom: 45px;
     text-align: center;
     font-size: 40px;
-    margin-bottom: 45px;
     color: #ffffff;
 }
 
 
-/* =====================================
+/* =========================================================
+   3D LETTER EFFECT
+========================================================= */
+
+.about h1,
+.education h2,
+.skills h2,
+.projects-section h2,
+.experience h2,
+.contact h2 {
+    perspective: 800px;
+}
+
+
+/* Individual letters */
+
+.hover-letter {
+    display: inline-block;
+    transform-style: preserve-3d;
+    cursor: default;
+    transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+}
+
+
+/* Main hover effect */
+
+.hover-letter:hover {
+    transform: translateY(-10px) translateZ(25px) rotateX(15deg) rotateY(-8deg) scale(1.12);
+    color: #67e8f9;
+    text-shadow: 0 5px 0 #0891b2, 0 10px 20px rgba(103, 232, 249, 0.45), 0 0 25px rgba(124, 58, 237, 0.5);
+}
+
+
+/* Stronger effect */
+
+.about h1 .hover-letter:hover,
+.education h2 .hover-letter:hover,
+.skills h2 .hover-letter:hover,
+.projects-section h2 .hover-letter:hover,
+.experience h2 .hover-letter:hover,
+.contact h2 .hover-letter:hover {
+    transform: translateY(-12px) translateZ(30px) rotateX(18deg) rotateY(-10deg) scale(1.15);
+}
+
+
+/* =========================================================
    ABOUT
-===================================== */
+========================================================= */
 
 .about {
     text-align: center;
@@ -311,9 +410,9 @@ nav ul li a.active::after {
 }
 
 .about-card p {
+    color: #444;
     font-size: 18px;
     line-height: 1.8;
-    color: #444;
 }
 
 .about-card:hover {
@@ -322,9 +421,9 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
+/* =========================================================
    EDUCATION
-===================================== */
+========================================================= */
 
 .education-box {
     max-width: 1000px;
@@ -339,14 +438,14 @@ nav ul li a.active::after {
 }
 
 .education-box h3 {
-    font-size: 24px;
     margin-bottom: 10px;
+    font-size: 24px;
 }
 
 .education-box p {
-    font-size: 17px;
     margin-bottom: 8px;
     color: #444;
+    font-size: 17px;
 }
 
 .education-box span {
@@ -360,9 +459,9 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
+/* =========================================================
    SKILLS
-===================================== */
+========================================================= */
 
 .skills-container {
     display: flex;
@@ -374,13 +473,13 @@ nav ul li a.active::after {
 .skill-box {
     width: 180px;
     padding: 20px;
-    text-align: center;
     border-radius: 20px;
-    font-size: 18px;
-    font-weight: 600;
+    text-align: center;
     background: rgba(255, 255, 255, 0.94);
     color: #222;
     border: 2px solid transparent;
+    font-size: 18px;
+    font-weight: 600;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -392,70 +491,297 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
-   PROJECTS
-===================================== */
+/* =========================================================
+   PROJECT SECTION
+========================================================= */
 
-.projects-container {
-    display: flex;
-    justify-content: center;
+.projects-section {
+    padding: 90px 80px;
+}
+
+.projects-inner {
+    width: 100%;
+}
+
+
+/* =========================================================
+   PROJECT SECTION HEADING
+========================================================= */
+
+.projects-section .section-heading {
+    width: 100%;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.projects-section .section-heading h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.projects-section .section-heading p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
-    flex-wrap: wrap;
     gap: 25px;
 }
 
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
 .project-card {
-    width: 320px;
-    padding: 28px;
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.96);
     color: #222;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.project-card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.project-card p {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-.project-card a {
-    text-decoration: none;
-    background: linear-gradient( 135deg, #0891b2, #7c3aed);
-    color: white;
-    padding: 11px 18px;
-    display: inline-block;
-    border-radius: 9px;
-    margin-top: 8px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
 }
 
 .project-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 25px 55px rgba(103, 232, 249, 0.15);
+    border-color: rgba(103, 232, 249, 0.55);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 35px rgba(103, 232, 249, 0.10);
 }
 
 
-/* =====================================
-   PROFESSIONAL EXPERIENCE
-===================================== */
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease, filter 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+    filter: brightness(0.72);
+}
+
+
+/* =========================================================
+   PROJECT OVERLAY
+========================================================= */
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( 135deg, rgba(5, 8, 22, 0.25), rgba(124, 58, 237, 0.30));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #050816;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transform: translateY(15px);
+    transition: transform 0.4s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .project-overlay a {
+    transform: translateY(0);
+}
+
+.project-overlay a:hover {
+    background: #67e8f9;
+    color: #050816;
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 24px;
+}
+
+.project-category {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: #0891b2;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.project-content h3 {
+    margin-bottom: 10px;
+    color: #172033;
+    font-size: 22px;
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   PROJECT TECH
+========================================================= */
+
+.project-content .project-tech {
+    margin-bottom: 12px;
+    color: #7c3aed;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.project-content>p:not(.project-tech) {
+    margin-bottom: 18px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   PROJECT TOOLS
+========================================================= */
+
+.project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 20px;
+}
+
+.project-tools span {
+    padding: 6px 9px;
+    border: 1px solid #dbe3ea;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #475467;
+    font-size: 10px;
+    font-weight: 600;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.project-tools span:hover {
+    transform: translateY(-2px);
+    border-color: #67e8f9;
+    background: #ecfeff;
+}
+
+
+/* =========================================================
+   PROJECT LINKS — PORTFOLIO THEME
+========================================================= */
+
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 0 17px;
+    border-radius: 9px;
+    background: linear-gradient( 135deg, #06b6d4, #7c3aed);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 8px 20px rgba(103, 232, 249, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.project-btn i {
+    transition: transform 0.3s ease;
+}
+
+.project-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+    box-shadow: 0 12px 28px rgba(103, 232, 249, 0.25), 0 5px 20px rgba(124, 58, 237, 0.20);
+}
+
+.project-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   GITHUB — OUTLINE VERSION
+========================================================= */
+
+.project-btn.secondary {
+    background: transparent;
+    color: #67e8f9;
+    border: 1.5px solid #67e8f9;
+    box-shadow: none;
+}
+
+.project-btn.secondary:hover {
+    background: linear-gradient( 135deg, #06b6d4, #7c3aed);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(103, 232, 249, 0.20);
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
 
 .experience {
     background: transparent;
@@ -478,19 +804,19 @@ nav ul li a.active::after {
 }
 
 .experience-card h3 {
-    font-size: 28px;
     margin-bottom: 10px;
+    font-size: 28px;
 }
 
 .experience-card h4 {
-    color: #0891b2;
     margin-bottom: 15px;
+    color: #0891b2;
 }
 
 .experience-card p {
-    line-height: 1.8;
-    color: #555;
     margin-bottom: 15px;
+    color: #555;
+    line-height: 1.8;
 }
 
 .experience-card ul {
@@ -503,9 +829,9 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
+/* =========================================================
    CONTACT
-===================================== */
+========================================================= */
 
 .contact-container {
     display: flex;
@@ -525,8 +851,8 @@ nav ul li a.active::after {
 }
 
 .contact-box h3 {
-    font-size: 23px;
     margin-bottom: 15px;
+    font-size: 23px;
 }
 
 .contact-box p {
@@ -535,7 +861,6 @@ nav ul li a.active::after {
 }
 
 .contact-box a {
-    text-decoration: none;
     color: #0891b2;
     font-weight: 600;
 }
@@ -551,39 +876,39 @@ nav ul li a.active::after {
 }
 
 
-/* =====================================
+/* =========================================================
    FOOTER
-===================================== */
+========================================================= */
 
 footer {
-    background: rgba(5, 8, 22, 0.85);
-    text-align: center;
     padding: 25px;
+    background: rgba(5, 8, 22, 0.85);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     color: #cbd5e1;
+    text-align: center;
 }
 
 
-/* =====================================
+/* =========================================================
    BACK TO TOP
-===================================== */
+========================================================= */
 
 #backToTop {
     position: fixed;
-    bottom: 30px;
     right: 30px;
+    bottom: 30px;
+    z-index: 999;
     width: 48px;
     height: 48px;
+    display: none;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     background: linear-gradient( 135deg, #06b6d4, #7c3aed);
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     cursor: pointer;
-    display: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 999;
 }
 
 #backToTop:hover {
@@ -592,9 +917,9 @@ footer {
 }
 
 
-/* =====================================
+/* =========================================================
    SCROLL REVEAL
-===================================== */
+========================================================= */
 
 section {
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -611,18 +936,9 @@ section.show {
 }
 
 
-/* =====================================
-   TYPING TEXT
-===================================== */
-
-#typing-text {
-    min-height: 52px;
-}
-
-
-/* =====================================
+/* =========================================================
    TEXT SELECTION
-===================================== */
+========================================================= */
 
 ::selection {
     background: #67e8f9;
@@ -630,124 +946,9 @@ section.show {
 }
 
 
-/* =====================================
-   RESPONSIVE DESIGN
-===================================== */
-
-@media (max-width: 900px) {
-    nav {
-        padding: 18px 30px;
-    }
-    nav ul li {
-        margin-left: 18px;
-    }
-    .hero {
-        padding: 70px 40px;
-    }
-    .hero-left h1 {
-        font-size: 48px;
-    }
-    .hero-left h2 {
-        font-size: 30px;
-    }
-    .hero-right img {
-        width: 280px;
-        height: 280px;
-    }
-}
-
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 18px 20px;
-    }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 18px;
-    }
-    nav ul li {
-        margin: 8px 0;
-    }
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 25px;
-    }
-    .hero-left {
-        width: 100%;
-    }
-    .hero-right {
-        width: 100%;
-        margin-top: 45px;
-    }
-    .hero-left h1 {
-        font-size: 42px;
-    }
-    .hero-left h2 {
-        font-size: 27px;
-    }
-    .hero-left p {
-        font-size: 16px;
-    }
-    .hero-right img {
-        width: 240px;
-        height: 240px;
-    }
-    .about,
-    .education,
-    .skills,
-    .projects,
-    .experience,
-    .contact {
-        padding: 65px 22px;
-    }
-    .about h1,
-    .education h2,
-    .skills h2,
-    .projects h2,
-    .experience h2,
-    .contact h2 {
-        font-size: 32px;
-    }
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-card {
-        width: 100%;
-        max-width: 400px;
-    }
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .contact-box {
-        width: 100%;
-        max-width: 400px;
-    }
-    .buttons {
-        justify-content: center;
-    }
-    #backToTop {
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-
-/* =====================================
+/* =========================================================
    WELCOME SCREEN
-===================================== */
+========================================================= */
 
 #welcome-screen {
     position: fixed;
@@ -755,17 +956,19 @@ section.show {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: radial-gradient( circle at 20% 20%, rgba(124, 58, 237, 0.35), transparent 30%), radial-gradient( circle at 80% 30%, rgba(6, 182, 212, 0.30), transparent 30%), radial-gradient( circle at 50% 90%, rgba(236, 72, 153, 0.18), transparent 35%), #050816;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient( circle at 20% 20%, rgba(124, 58, 237, 0.35), transparent 30%), radial-gradient( circle at 80% 30%, rgba(6, 182, 212, 0.30), transparent 30%), radial-gradient( circle at 50% 90%, rgba(236, 72, 153, 0.18), transparent 35%), #050816;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 
-/* Welcome content */
+/* =========================================================
+   WELCOME CONTENT
+========================================================= */
 
 .welcome-content {
     max-width: 700px;
@@ -788,19 +991,19 @@ section.show {
 /* Small heading */
 
 .welcome-small {
-    font-size: 18px;
-    letter-spacing: 6px;
-    font-weight: 600;
-    color: #67e8f9;
     margin-bottom: 15px;
+    color: #67e8f9;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 6px;
 }
 
 
 /* Main heading */
 
 .welcome-content h1 {
-    font-size: 72px;
     margin-bottom: 20px;
+    font-size: 72px;
     background: linear-gradient( 90deg, #67e8f9, #a78bfa, #f0abfc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -808,13 +1011,13 @@ section.show {
 }
 
 
-/* Description */
+/* Welcome text */
 
 .welcome-text {
-    font-size: 18px;
-    color: #cbd5e1;
-    line-height: 1.7;
     margin-bottom: 35px;
+    color: #cbd5e1;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
 
@@ -826,7 +1029,6 @@ section.show {
     border-radius: 30px;
     background: linear-gradient( 135deg, #67e8f9, #7c3aed);
     color: #050816;
-    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
@@ -849,7 +1051,7 @@ section.show {
 }
 
 
-/* Hide welcome screen */
+/* Hide welcome */
 
 #welcome-screen.hide {
     opacity: 0;
@@ -858,11 +1060,211 @@ section.show {
 }
 
 
-/* =====================================
-   WELCOME SCREEN MOBILE
-===================================== */
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    nav {
+        padding: 18px 30px;
+    }
+    nav ul li {
+        margin-left: 18px;
+    }
+    .hero {
+        padding: 70px 40px;
+    }
+    .hero-left h1 {
+        font-size: 48px;
+    }
+    .hero-left h2 {
+        font-size: 30px;
+    }
+    .hero-right img {
+        width: 280px;
+        height: 280px;
+    }
+    .projects-section {
+        padding: 75px 40px;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 768px
+========================================================= */
 
 @media (max-width: 768px) {
+    /* NAV */
+    nav {
+        flex-direction: row;
+        padding: 15px 20px;
+    }
+    .logo {
+        font-size: 23px;
+    }
+    .mobile-menu-btn {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        top: 72px;
+        left: 15px;
+        right: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 0;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 15px;
+        background: rgba(5, 8, 22, 0.96);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+    nav ul.mobile-open {
+        display: flex;
+    }
+    nav ul li {
+        margin: 0;
+    }
+    nav ul li a {
+        display: block;
+        padding: 12px 10px;
+        border-radius: 8px;
+    }
+    nav ul li a:hover {
+        background: rgba(103, 232, 249, 0.08);
+    }
+    /* HERO */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 25px;
+    }
+    .hero-left {
+        width: 100%;
+    }
+    .hero-left h3 {
+        font-size: 23px;
+    }
+    .hero-left h1 {
+        font-size: 42px;
+    }
+    .hero-left h2 {
+        font-size: 27px;
+    }
+    .hero-left p {
+        font-size: 16px;
+    }
+    .hero-right {
+        width: 100%;
+        margin-top: 45px;
+    }
+    .hero-right img {
+        width: 240px;
+        height: 240px;
+    }
+    .buttons {
+        justify-content: center;
+    }
+    /* COMMON */
+    .about,
+    .education,
+    .skills,
+    .experience,
+    .contact {
+        padding: 65px 22px;
+    }
+    .about h1,
+    .education h2,
+    .skills h2,
+    .projects-section .section-heading h2,
+    .experience h2,
+    .contact h2 {
+        font-size: 32px;
+    }
+    /* ABOUT */
+    .about-card {
+        padding: 25px;
+    }
+    .about-card p {
+        font-size: 15px;
+    }
+    /* EDUCATION */
+    .education-box {
+        padding: 22px;
+    }
+    .education-box h3 {
+        font-size: 20px;
+    }
+    .education-box p {
+        font-size: 15px;
+    }
+    /* SKILLS */
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .skill-box {
+        width: 100%;
+        max-width: 350px;
+    }
+    /* PROJECTS */
+    .projects-section {
+        padding: 65px 22px;
+    }
+    .projects-section .section-heading {
+        margin-bottom: 30px;
+    }
+    .projects-section .section-heading p {
+        font-size: 13px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .project-card {
+        width: 100%;
+    }
+    .project-content {
+        padding: 20px;
+    }
+    .project-content h3 {
+        font-size: 20px;
+    }
+    .project-content>p:not(.project-tech) {
+        font-size: 13px;
+    }
+    .project-btn {
+        flex: 1;
+        min-height: 42px;
+    }
+    /* EXPERIENCE */
+    .experience-card {
+        padding: 25px;
+    }
+    .experience-card h3 {
+        font-size: 23px;
+    }
+    /* CONTACT */
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-box {
+        width: 100%;
+        max-width: 400px;
+    }
+    /* BACK TO TOP */
+    #backToTop {
+        right: 20px;
+        bottom: 20px;
+    }
+    /* WELCOME */
     .welcome-content {
         padding: 25px;
     }
@@ -883,50 +1285,165 @@ section.show {
 }
 
 
-/* =====================================
-   3D LETTER HOVER EFFECT
-===================================== */
+/* =========================================================
+   SMALL PHONES — 420px
+========================================================= */
 
-.about h1,
-.education h2,
-.skills h2,
-.projects h2,
-.experience h2,
-.contact h2 {
-    perspective: 800px;
+@media (max-width: 420px) {
+    /* NAV */
+    nav {
+        padding: 14px 15px;
+    }
+    .logo {
+        font-size: 20px;
+    }
+    /* HERO */
+    .hero {
+        padding: 50px 18px;
+    }
+    .hero-left h3 {
+        font-size: 20px;
+    }
+    .hero-left h1 {
+        font-size: 36px;
+    }
+    .hero-left h2 {
+        font-size: 23px;
+    }
+    .hero-left p {
+        font-size: 14px;
+    }
+    .hero-right img {
+        width: 210px;
+        height: 210px;
+    }
+    /* BUTTONS */
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .buttons a {
+        text-align: center;
+    }
+    /* COMMON */
+    .about,
+    .education,
+    .skills,
+    .experience,
+    .contact {
+        padding: 55px 15px;
+    }
+    .about h1,
+    .education h2,
+    .skills h2,
+    .projects-section .section-heading h2,
+    .experience h2,
+    .contact h2 {
+        font-size: 27px;
+    }
+    /* ABOUT */
+    .about-card {
+        padding: 20px;
+    }
+    .about-card p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+    /* EDUCATION */
+    .education-box {
+        padding: 18px;
+        border-radius: 17px;
+    }
+    .education-box h3 {
+        font-size: 18px;
+    }
+    .education-box p {
+        font-size: 13px;
+    }
+    /* SKILLS */
+    .skill-box {
+        font-size: 16px;
+        padding: 16px;
+    }
+    /* PROJECTS */
+    .projects-section {
+        padding: 55px 14px;
+    }
+    .projects-section .section-heading p {
+        font-size: 12px;
+    }
+    .project-content {
+        padding: 17px;
+    }
+    .project-content h3 {
+        font-size: 18px;
+    }
+    .project-content>p:not(.project-tech) {
+        font-size: 12px;
+    }
+    .project-tools span {
+        font-size: 9px;
+        padding: 5px 8px;
+    }
+    .project-links {
+        flex-wrap: wrap;
+    }
+    .project-btn {
+        font-size: 10px;
+        padding: 0 10px;
+    }
+    /* EXPERIENCE */
+    .experience-card {
+        padding: 20px;
+    }
+    .experience-card h3 {
+        font-size: 21px;
+    }
+    .experience-card p,
+    .experience-card li {
+        font-size: 13px;
+    }
+    /* CONTACT */
+    .contact-box {
+        min-width: 0;
+        padding: 20px;
+    }
+    .contact-box h3 {
+        font-size: 20px;
+    }
+    .contact-box p {
+        font-size: 14px;
+    }
+    /* WELCOME */
+    .welcome-content {
+        padding: 20px;
+    }
+    .welcome-small {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+    .welcome-content h1 {
+        font-size: 40px;
+    }
+    .welcome-text {
+        font-size: 14px;
+    }
 }
 
 
-/* Individual letters */
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-.hover-letter {
-    display: inline-block;
-    transform-style: preserve-3d;
-    transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
-    cursor: default;
-}
-
-
-/* 3D hover */
-
-.hover-letter:hover {
-    transform: translateY(-10px) translateZ(25px) rotateX(15deg) rotateY(-8deg) scale(1.12);
-    color: #67e8f9;
-    text-shadow: 0 5px 0 #0891b2, 0 10px 20px rgba(103, 232, 249, 0.45), 0 0 25px rgba(124, 58, 237, 0.5);
-}
-
-
-/* Slightly different glow for main headings */
-
-.about h1 .hover-letter:hover,
-.education h2 .hover-letter:hover,
-.skills h2 .hover-letter:hover,
-.projects h2 .hover-letter:hover,
-.experience h2 .hover-letter:hover,
-.contact h2 .hover-letter:hover {
-    transform: translateY(-12px) translateZ(30px) rotateX(18deg) rotateY(-10deg) scale(1.15);
-}
-
-transform: translateY(-12px) translateZ(30px) rotateX(18deg) rotateY(-10deg) scale(1.15);
-
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+    .hover-letter {
+        transition: none !important;
+    }
 }

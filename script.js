@@ -4,36 +4,44 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
+
     // =====================================
     // WELCOME SCREEN
     // =====================================
 
-    const welcomeScreen = document.getElementById("welcome-screen");
-    const enterPortfolio = document.getElementById("enter-portfolio");
+    const welcomeScreen =
+        document.getElementById("welcome-screen");
 
-    const typingText = document.getElementById("typing-text");
+    const enterPortfolio =
+        document.getElementById("enter-portfolio");
 
 
     // =====================================
     // TYPING EFFECT
     // =====================================
 
-    const text = "Aspiring Software Engineer";
+    const typingText =
+        document.getElementById("typing-text");
+
+    const text =
+        "Aspiring Software Engineer";
 
     let i = 0;
 
+
     function startTyping() {
 
-        // Make absolutely sure the old text is removed
         typingText.textContent = "";
 
         i = 0;
+
 
         function typeWriter() {
 
             if (i < text.length) {
 
-                typingText.textContent += text.charAt(i);
+                typingText.textContent +=
+                    text.charAt(i);
 
                 i++;
 
@@ -44,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         typeWriter();
+
     }
 
 
@@ -51,84 +60,209 @@ document.addEventListener("DOMContentLoaded", function() {
     // ENTER PORTFOLIO
     // =====================================
 
-    enterPortfolio.addEventListener("click", function() {
+    if (enterPortfolio) {
 
-        // Hide welcome screen
-        welcomeScreen.classList.add("hide");
+        enterPortfolio.addEventListener(
+            "click",
+            function() {
 
-        // Start typing AFTER entering portfolio
-        setTimeout(function() {
+                welcomeScreen.classList.add("hide");
 
-            startTyping();
 
-        }, 500);
+                setTimeout(
+                    function() {
 
-    });
+                        startTyping();
+
+                    },
+                    500
+                );
+
+            }
+        );
+
+    }
+
+
+    // =====================================
+    // MOBILE MENU
+    // =====================================
+
+    const mobileMenuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const navMenu =
+        document.getElementById("navMenu");
+
+
+    if (mobileMenuBtn && navMenu) {
+
+        mobileMenuBtn.addEventListener(
+            "click",
+            function() {
+
+                navMenu.classList.toggle(
+                    "mobile-open"
+                );
+
+
+                const icon =
+                    mobileMenuBtn.querySelector("i");
+
+
+                if (
+                    navMenu.classList.contains(
+                        "mobile-open"
+                    )
+                ) {
+
+                    icon.classList.remove(
+                        "fa-bars"
+                    );
+
+                    icon.classList.add(
+                        "fa-xmark"
+                    );
+
+                } else {
+
+                    icon.classList.remove(
+                        "fa-xmark"
+                    );
+
+                    icon.classList.add(
+                        "fa-bars"
+                    );
+
+                }
+
+            }
+        );
+
+
+        // Close menu after clicking a link
+
+        navMenu
+            .querySelectorAll("a")
+            .forEach(function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        navMenu.classList.remove(
+                            "mobile-open"
+                        );
+
+
+                        const icon =
+                            mobileMenuBtn.querySelector(
+                                "i"
+                            );
+
+
+                        icon.classList.remove(
+                            "fa-xmark"
+                        );
+
+                        icon.classList.add(
+                            "fa-bars"
+                        );
+
+                    }
+                );
+
+            });
+
+    }
 
 
     // =====================================
     // SMOOTH SCROLLING
     // =====================================
 
-    document.querySelectorAll("nav a").forEach(function(link) {
+    document
+        .querySelectorAll("nav a")
+        .forEach(function(link) {
 
-        link.addEventListener("click", function(event) {
+            link.addEventListener(
+                "click",
+                function(event) {
 
-            event.preventDefault();
+                    event.preventDefault();
 
-            const target = document.querySelector(
-                this.getAttribute("href")
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+
+                    if (target) {
+
+                        target.scrollIntoView({
+
+                            behavior: "smooth",
+
+                            block: "start"
+
+                        });
+
+                    }
+
+                }
             );
 
-            if (target) {
-
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-
-            }
-
         });
-
-    });
 
 
     // =====================================
     // SCROLL REVEAL
     // =====================================
 
-    const sections = document.querySelectorAll("section");
+    const sections =
+        document.querySelectorAll("section");
 
-    const observer = new IntersectionObserver(
 
-        function(entries) {
+    const observer =
+        new IntersectionObserver(
 
-            entries.forEach(function(entry) {
+            function(entries) {
 
-                if (entry.isIntersecting) {
+                entries.forEach(
+                    function(entry) {
 
-                    entry.target.classList.add("show");
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                }
+                            entry.target.classList.add(
+                                "show"
+                            );
 
-            });
+                        }
 
-        },
+                    }
+                );
 
-        {
-            threshold: 0.15
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+    sections.forEach(
+        function(section) {
+
+            section.classList.add("hidden");
+
+            observer.observe(section);
+
         }
-
     );
-
-
-    sections.forEach(function(section) {
-
-        section.classList.add("hidden");
-
-        observer.observe(section);
-
-    });
 
 
     // =====================================
@@ -136,47 +270,73 @@ document.addEventListener("DOMContentLoaded", function() {
     // =====================================
 
     const sectionsForNav =
-        document.querySelectorAll("section");
+        document.querySelectorAll(
+            "section"
+        );
+
 
     const navLinks =
-        document.querySelectorAll("nav ul li a");
+        document.querySelectorAll(
+            "nav ul li a"
+        );
 
 
-    window.addEventListener("scroll", function() {
+    window.addEventListener(
+        "scroll",
+        function() {
 
-        let currentSection = "";
-
-        sectionsForNav.forEach(function(section) {
-
-            const sectionTop =
-                section.offsetTop - 150;
-
-            if (window.scrollY >= sectionTop) {
-
-                currentSection =
-                    section.getAttribute("id");
-
-            }
-
-        });
+            let currentSection = "";
 
 
-        navLinks.forEach(function(link) {
+            sectionsForNav.forEach(
+                function(section) {
 
-            link.classList.remove("active");
+                    const sectionTop =
+                        section.offsetTop - 150;
 
-            if (
-                link.getAttribute("href") ===
-                "#" + currentSection
-            ) {
 
-                link.classList.add("active");
+                    if (
+                        window.scrollY >=
+                        sectionTop
+                    ) {
 
-            }
+                        currentSection =
+                            section.getAttribute(
+                                "id"
+                            );
 
-        });
+                    }
 
-    });
+                }
+            );
+
+
+            navLinks.forEach(
+                function(link) {
+
+                    link.classList.remove(
+                        "active"
+                    );
+
+
+                    if (
+                        link.getAttribute(
+                            "href"
+                        ) ===
+                        "#" + currentSection
+                    ) {
+
+                        link.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
 
 
     // =====================================
@@ -184,35 +344,51 @@ document.addEventListener("DOMContentLoaded", function() {
     // =====================================
 
     const backToTop =
-        document.getElementById("backToTop");
+        document.getElementById(
+            "backToTop"
+        );
 
 
-    window.addEventListener("scroll", function() {
+    if (backToTop) {
 
-        if (window.scrollY > 400) {
+        window.addEventListener(
+            "scroll",
+            function() {
 
-            backToTop.style.display = "block";
+                if (
+                    window.scrollY > 400
+                ) {
 
-        } else {
+                    backToTop.style.display =
+                        "block";
 
-            backToTop.style.display = "none";
+                } else {
 
-        }
+                    backToTop.style.display =
+                        "none";
 
-    });
+                }
+
+            }
+        );
 
 
-    backToTop.addEventListener("click", function() {
+        backToTop.addEventListener(
+            "click",
+            function() {
 
-        window.scrollTo({
+                window.scrollTo({
 
-            top: 0,
+                    top: 0,
 
-            behavior: "smooth"
+                    behavior: "smooth"
 
-        });
+                });
 
-    });
+            }
+        );
+
+    }
 
 
     // =====================================
@@ -221,33 +397,71 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const interactiveHeadings =
         document.querySelectorAll(
-            ".about h1, .education h2, .skills h2, .projects h2, .experience h2, .contact h2"
+
+            ".about h1, " +
+            ".education h2, " +
+            ".skills h2, " +
+            ".projects-section h2, " +
+            ".experience h2, " +
+            ".contact h2"
+
         );
 
 
-    interactiveHeadings.forEach(function(heading) {
-
-        const text = heading.textContent;
-
-        heading.innerHTML = "";
+    interactiveHeadings.forEach(
+        function(heading) {
 
 
-        [...text].forEach(function(letter) {
+            // Prevent duplicate processing
 
-            const span =
-                document.createElement("span");
+            if (
+                heading.querySelector(
+                    ".hover-letter"
+                )
+            ) {
 
-            span.classList.add("hover-letter");
+                return;
 
-            span.textContent =
-                letter === " " ?
-                "\u00A0" :
-                letter;
+            }
 
-            heading.appendChild(span);
 
-        });
+            const headingText =
+                heading.textContent.trim();
 
-    });
+
+            heading.innerHTML = "";
+
+
+            [...headingText].forEach(
+                function(letter) {
+
+
+                    const span =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    span.classList.add(
+                        "hover-letter"
+                    );
+
+
+                    span.textContent =
+                        letter === " " ?
+                        "\u00A0" :
+                        letter;
+
+
+                    heading.appendChild(
+                        span
+                    );
+
+                }
+            );
+
+        }
+    );
+
 
 });
